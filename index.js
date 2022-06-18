@@ -10,7 +10,7 @@ import { fibArray } from
 './modules/fibonacci2Rec.js'
 
 import {mergeSort} from './modules/mergeSort.js';
-import { Nodo, createListRec, reverseList} from './modules/linkedLists.js';
+import { Nodo, createListRec, reverListRec, printNodeList} from './modules/linkedLists.js';
 
 console.log("resutados");
 let resultado=findBinary(511);
@@ -35,10 +35,28 @@ console.log(originally_unsorted_array);
 
 
 
+
+//create a pseudo nodeList recursively
 let nodos=[];
-let nodesToCreate=8;
+let nodesToCreate=10;
 let nodo_start_list=createListRec(nodesToCreate);
 
+
+//print recursively
+printNodeList(nodo_start_list);
+
+
+let net_newNod=reverListRec(nodo_start_list);
+
+console.log("First node allowed us to access the rest of the elements of the list\n Note that, as the nodelist has been reversed, its 'next' property is now null");
 console.log(nodo_start_list);
+
+
+setTimeout(printNodeList, 2500, net_newNod);
+//printNodeList(net_newNod);
+
+
+
+
 
 
